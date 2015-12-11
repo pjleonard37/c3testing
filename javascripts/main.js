@@ -60,9 +60,9 @@ console.log("loaded main.js");
         x: 'x',
         columns: [
           ['x', 'Bicyclists', 'Pedestrians', 'Cars', 'Boats'],
-          ['New York', 1000232, 1050232, 1100232, 1300232],
-          ['Boston', 1800232, 1200232, 1700232, 1100232],
-          ['Philadelphia', 1330232, 1870232, 2500232, 1065232]
+          ['New York', 1000, 1032, 4232, 132],
+          ['Boston', 182, 1262, 1782, 1562],
+          ['Philadelphia', 1232, 785, 4560, 1092]
         ],
         type: 'bar'
       },
@@ -94,9 +94,9 @@ console.log("loaded main.js");
         x: 'x',
         columns: [
           ['x', 'Bicyclists', 'Pedestrians', 'Cars', 'Boats'],
-          ['New York', 1000232, 1050232, 1100232, 1300232],
-          ['Boston', 1800232, 1200232, 1700232, 1100232],
-          ['Philadelphia', 1330232, 1870232, 2500232, 1065232]
+          ['New York', 1000, 1032, 4232, 132],
+          ['Boston', 182, 1262, 1782, 1562],
+          ['Philadelphia', 1232, 785, 4560, 1092]
         ],
         type: 'bar',
         groups: [
