@@ -1,2 +1,2 @@
-# patternsandbox
-A sandbox for exploring JS patterns.
+# C3Testing
+A sandbox for exploring C3.
