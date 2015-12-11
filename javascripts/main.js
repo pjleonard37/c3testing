@@ -1,7 +1,7 @@
 console.log("loaded main.js");
 
 (function() {
-  var pie = c3.generate({
+  var chart = c3.generate({
       bindto: '#pie',
       data: {
         columns: [
