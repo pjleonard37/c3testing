@@ -26,7 +26,7 @@ console.log("loaded main.js");
       data: {
         x: 'x',
         columns: [
-          ['x', '2012', '2013', '2014', '2015'],
+          ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04'],
           ['New York', 1000232, 1050232, 1100232, 1300232],
           ['Boston', 1800232, 1200232, 1700232, 1100232],
           ['Philadelphia', 1330232, 1870232, 2500232, 1065232]
@@ -36,7 +36,7 @@ console.log("loaded main.js");
         x: {
           type: 'timeseries',
           tick: {
-            format: '%YYYY'
+            format: '%Y-%m-%d'
           }
         }
       }
