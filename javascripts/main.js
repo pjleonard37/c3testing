@@ -37,6 +37,14 @@ console.log("loaded main.js");
           type: 'timeseries',
           tick: {
             format: '%Y-%m-%d'
+          },
+          label: {
+            text: 'Investment Year'
+          }
+        },
+        y: {
+          label: {
+            text: 'Infrastructure Investment'
           }
         }
       }
@@ -63,6 +71,14 @@ console.log("loaded main.js");
       axis: {
         x: {
           type: 'category',
+        },
+        label: {
+          text: 'Vehicle Type'
+        }
+      },
+      y: {
+        label: {
+          text: 'Vehicle Count'
         }
       },
       color: {
@@ -96,12 +112,20 @@ console.log("loaded main.js");
         x: {
           type: 'category',
         }
+        label: {
+          text: 'Vehicle Type'
+        }
+      },
+      y: {
+        label: {
+          text: 'Vehicle Count'
+        }
       },
       color: {
         pattern: ['#449AA2', '#364D6E', '#703F7D', '#ED871F', '#B5004A', '#744584', '#cfddb8', '#97AFD2']
       },
       legend: {
-          position: 'right'
+          position: 'left'
       }
   });
 })();
