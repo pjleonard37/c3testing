@@ -104,4 +104,4 @@ console.log("loaded main.js");
           position: 'right'
       }
   });
-)();
+})();
