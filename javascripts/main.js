@@ -75,32 +75,19 @@ console.log("loaded main.js");
   var chart = c3.generate({
       bindto: '#stackedbar',
       data: {
-        x: 'x',
-        columns: [
-          ['x', 'Bicyclists', 'Pedestrians', 'Cars', 'Boats'],
-          ['New York', 1000232, 1050232, 1100232, 1300232],
-          ['Boston', 1800232, 1200232, 1700232, 1100232],
-          ['Philadelphia', 1330232, 1870232, 2500232, 1065232]
-        ],
-        type: 'bar',
-        groups: [
-          ['New York', 'Boston']
-        ]
+          columns: [
+              ['data1', -30, 200, 200, 400, -150, 250],
+              ['data2', 130, 100, -100, 200, -150, 50],
+              ['data3', -230, 200, 200, -300, 250, 250]
+          ],
+          type: 'bar',
+          groups: [
+              ['data1', 'data2']
+          ]
       },
       grid: {
-        y: {
-          lines: [{value:0}]
-        }
-      },
-      axis: {
-        x: {
-          type: 'category',
-        }
-      },
-      color: {
-        pattern: ['#449AA2', '#364D6E', '#703F7D', '#ED871F', '#B5004A', '#744584', '#cfddb8', '#97AFD2']
-      },
-      legend: {
-          position: 'right'
+          y: {
+              lines: [{value:0}]
+          }
       }
   });
