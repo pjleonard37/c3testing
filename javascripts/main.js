@@ -36,7 +36,7 @@ console.log("loaded main.js");
         x: {
           type: 'timeseries',
           tick: {
-            format: '%Y'
+            format: '%YYYY'
           }
         }
       }
