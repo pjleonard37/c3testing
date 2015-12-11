@@ -47,8 +47,7 @@ console.log("loaded main.js");
             text: 'Infrastructure Investment'
           }
         }
-      }
-      ,
+      },
       color: {
         pattern: ['#449AA2', '#364D6E', '#703F7D', '#ED871F', '#B5004A', '#744584', '#cfddb8', '#97AFD2']
       },
@@ -74,12 +73,12 @@ console.log("loaded main.js");
         },
         label: {
           text: 'Vehicle Type'
-        }
-      },
-      y: {
-        label: {
-          text: 'Vehicle Count'
-        }
+        },
+        y: {
+          label: {
+            text: 'Vehicle Count'
+          }
+        },
       },
       color: {
         pattern: ['#449AA2', '#364D6E', '#703F7D', '#ED871F', '#B5004A', '#744584', '#cfddb8', '#97AFD2']
@@ -111,15 +110,15 @@ console.log("loaded main.js");
       axis: {
         x: {
           type: 'category',
-        }
+        },
         label: {
           text: 'Vehicle Type'
         }
-      },
-      y: {
-        label: {
-          text: 'Vehicle Count'
-        }
+        y: {
+          label: {
+            text: 'Vehicle Count'
+          }
+        },
       },
       color: {
         pattern: ['#449AA2', '#364D6E', '#703F7D', '#ED871F', '#B5004A', '#744584', '#cfddb8', '#97AFD2']
