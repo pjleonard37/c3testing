@@ -26,7 +26,7 @@ console.log("loaded main.js");
       data: {
         x: 'x',
         columns: [
-          ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04'],
+          ['x', '2013', '2014', '2015', '2016'],
           ['New York', 1000232, 1050232, 1100232, 1300232],
           ['Boston', 1800232, 1200232, 1700232, 1100232],
           ['Philadelphia', 1330232, 1870232, 2500232, 1065232]
@@ -34,10 +34,7 @@ console.log("loaded main.js");
       },
       axis: {
         x: {
-          type: 'timeseries',
-          tick: {
-            format: '%Y-%m-%d'
-          },
+          type: 'category',
           label: {
             text: 'Investment Year',
             position: 'outer-center'
@@ -72,10 +69,10 @@ console.log("loaded main.js");
       axis: {
         x: {
           type: 'category',
-        },
-        label: {
-          text: 'Vehicle Type',
-          position: 'outer-center'
+          label: {
+            text: 'Vehicle Type',
+            position: 'outer-center'
+          }
         },
         y: {
           label: {
