@@ -39,12 +39,14 @@ console.log("loaded main.js");
             format: '%Y-%m-%d'
           },
           label: {
-            text: 'Investment Year'
+            text: 'Investment Year',
+            position: 'outer-center'
           }
         },
         y: {
           label: {
-            text: 'Infrastructure Investment'
+            text: 'Infrastructure Investment',
+            position: 'outer-middle'
           }
         }
       },
@@ -72,11 +74,13 @@ console.log("loaded main.js");
           type: 'category',
         },
         label: {
-          text: 'Vehicle Type'
+          text: 'Vehicle Type',
+          position: 'outer-center'
         },
         y: {
           label: {
-            text: 'Vehicle Count'
+            text: 'Vehicle Count',
+            position: 'outer-middle'
           }
         },
       },
@@ -110,13 +114,15 @@ console.log("loaded main.js");
       axis: {
         x: {
           type: 'category',
-        },
-        label: {
-          text: 'Vehicle Type'
+          label: {
+            text: 'Vehicle Type',
+            position: 'outer-center'
+          }
         },
         y: {
           label: {
-            text: 'Vehicle Count'
+            text: 'Vehicle Count',
+            position: 'outer-middle'
           }
         },
       },
