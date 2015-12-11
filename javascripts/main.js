@@ -113,7 +113,7 @@ console.log("loaded main.js");
         },
         label: {
           text: 'Vehicle Type'
-        }
+        },
         y: {
           label: {
             text: 'Vehicle Count'
