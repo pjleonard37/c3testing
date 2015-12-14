@@ -35,9 +35,9 @@ console.log("loaded main.js");
         ]
       },
       regions: [
-        {start:'2013-01-01', end:'2014-01-01', class:'r2013'},
-        {start:'2014-01-01', end:'2015-01-01', class:'r2014'},
-        {start:'2015-01-01', end:'2016-01-01', class:'r2015'}
+        {start:'2013-01-01', end:'2013-10-01', class:'r2013'},
+        {start:'2014-01-01', end:'2014-10-01', class:'r2014'},
+        {start:'2015-01-01', end:'2015-10-01', class:'r2015'}
       ],
       axis: {
         x: {
@@ -47,7 +47,7 @@ console.log("loaded main.js");
             position: 'outer-center'
           },
           tick: {
-            values: ['2013-07-01', '2014-07-01', '2015-07-01'],
+            values: ['2013-04-01', '2014-04-01', '2015-04-01'],
             format: '%Y'
           }
         },
