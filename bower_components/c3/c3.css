@@ -72,13 +72,13 @@
   fill: steelblue;
   fill-opacity: 0.1; }
 
-.c3-region.2013 {
+.c3-region .2013 {
   fill: red;
 }
-.c3-region.2014 {
+.c3-region .2014 {
   fill: green;
 }
-.c3-region.2015 {
+.c3-region .2015 {
   fill: blue;
 }
 
