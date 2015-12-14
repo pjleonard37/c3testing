@@ -5,12 +5,14 @@ console.log("loaded main.js");
       bindto: '#pie',
       data: {
         columns: [
-          ['New York', 10],
-          ['Boston', 20],
-          ['Philadelphia', 30],
-          ['Providence', 40],
-          ['Baltimore', 50],
-          ['Washington D.C.', 60],
+          ['Democratic Practice', 10],
+          ['Peacebuilding', 20],
+          ['Sustainable Development', 30],
+          ['Pivotal Place - New York City', 40],
+          ['Pivotal Place - Souther China', 50],
+          ['Pivotal Place - Western Balkans', 60],
+          ['Special Initiative: Eqypt', 29],
+          ['Other', 39],
         ],
         type: 'pie'
       },
@@ -18,7 +20,7 @@ console.log("loaded main.js");
         pattern: ['#449AA2', '#364D6E', '#703F7D', '#ED871F', '#B5004A', '#744584', '#cfddb8', '#97AFD2']
       },
       legend: {
-          position: 'left'
+          position: 'right'
       }
   });
   var chart = c3.generate({
@@ -38,6 +40,9 @@ console.log("loaded main.js");
           label: {
             text: 'Investment Year',
             position: 'outer-center'
+          },
+          tick: {
+            values: [2012, 2014, 2016]
           }
         },
         y: {
