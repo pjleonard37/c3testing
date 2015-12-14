@@ -34,8 +34,8 @@ console.log("loaded main.js");
           ['Philadelphia', 1330232, 1870232, 2500232, 1065232, 1000232, 1050232, 1100232, 1300232, 2500232, 1065232, 1000232, 1050232]
         ],
         regions: [
-          {start:0, end:1},
-          {start:2, end:4, class:'foo'}
+          {start:2013-01-01, end:2013-10-01},
+          {start:2014-01-01, end:2014-10-01, class:'foo'}
         ]
       },
       axis: {
