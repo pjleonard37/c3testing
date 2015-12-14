@@ -36,7 +36,7 @@ console.log("loaded main.js");
       },
       axis: {
         x: {
-          type: 'category',
+          type: 'timeseries',
           label: {
             text: 'Investment Year',
             position: 'outer-center'
