@@ -42,7 +42,8 @@ console.log("loaded main.js");
             position: 'outer-center'
           },
           tick: {
-            values: ['2013-01-01', '2014-01-01']
+            values: ['2013-07-01', '2014-07-01'],
+            format: '%Y'
           }
         },
         y: {
