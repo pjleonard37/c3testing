@@ -42,7 +42,7 @@ console.log("loaded main.js");
             position: 'outer-center'
           },
           tick: {
-            values: [2012, 2014, 2016]
+            values: ['2012', '2014', '2016']
           }
         },
         y: {
