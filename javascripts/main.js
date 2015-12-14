@@ -35,8 +35,8 @@ console.log("loaded main.js");
         ]
       },
       regions: [
-        {start:2013, end:2014},
-        {start:2014, end:2015, class:'foo'}
+        {start:2013-01-01, end:2014-01-01},
+        {start:2014-01-01, end:2015-01-01, class:'foo'}
       ],
       axis: {
         x: {
