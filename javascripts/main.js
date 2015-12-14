@@ -11,7 +11,7 @@ console.log("loaded main.js");
           ['Pivotal Place - New York City', 40],
           ['Pivotal Place - Souther China', 50],
           ['Pivotal Place - Western Balkans', 60],
-          ['Special Initiative: Eqypt', 29],
+          ['Special Initiative: Egypt', 29],
           ['Other', 39],
         ],
         type: 'pie'
