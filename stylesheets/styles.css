@@ -257,3 +257,10 @@ footer {
     color:#444;
   }
 }
+
+.c3-region-0 {
+  fill: red;
+}
+.c3-region.foo {
+  fill: green;
+}
