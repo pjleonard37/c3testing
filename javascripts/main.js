@@ -11,29 +11,6 @@ console.log("loaded main.js");
   var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json";
   console.log(url)
   $.getJSON(url,
-    // function(data) {
-    //   var entry = data.feed.entry;
-    //
-    //   var datap = [];
-    //   console.log(entry);
-    //   for (var i = 0; i < entry.length; i++) {
-    //     datap.push([entry[i][gsx$regions].$t, entry[i][3].$t]);
-    //   }
-    //   console.log(datap);
-    //   var chart = c3.generate({
-    //       bindto: '#chart',
-    //       data: {
-    //         columns: datap,
-    //         type: 'bar'
-    //       },
-    //       color: {
-    //         pattern: ['#449AA2', '#364D6E', '#703F7D', '#ED871F', '#B5004A', '#744584', '#cfddb8', '#97AFD2']
-    //       },
-    //       legend: {
-    //           position: 'bottom'
-    //       }
-    //   });
-    // });
     function (data) {
       for (var i = 0; i < data.feed.entry.length; i++) {
           for (var key in data.feed.entry[i]) {
@@ -48,6 +25,8 @@ console.log("loaded main.js");
               }
           }
       }
+
+      //C3 Formatting
       var datap = data.feed.entry;
       var datacategories = Object.keys(datap[0]);
       var emptyarray = [];
@@ -68,12 +47,15 @@ console.log("loaded main.js");
         labelobject[emptyarray[0]] = emptyarray[emptyarray.length - 1];
         emptyarray = [];
       }
+
+      //Chart Building
       var chart = c3.generate({
           bindto: '#chart',
           data: {
             x: 'x',
             columns: dataarray,
-            names: labelobject
+            names: labelobject,
+            type: 'bar'
           },
           axis: {
             x: {
