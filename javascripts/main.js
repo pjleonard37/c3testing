@@ -52,6 +52,7 @@ console.log("loaded main.js");
       var datacategories = Object.keys(datap[0]);
       var emptyarray = [];
       var dataarray = [];
+      var labelobject = {};
 
       for (var i = 0; i < datacategories.length; i++)
       {
@@ -64,13 +65,15 @@ console.log("loaded main.js");
           }
         }
         dataarray.push(emptyarray);
+        labelobject[emptyarray[0]] = emptyarray[emptyarray.length - 1];
         emptyarray = [];
       }
       var chart = c3.generate({
           bindto: '#chart',
           data: {
             x: 'x',
-            columns: dataarray
+            columns: dataarray,
+            names: labelobject
           },
           axis: {
             x: {
