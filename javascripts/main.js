@@ -1,87 +1,144 @@
 console.log("loaded main.js");
 
-// ID of the Google Spreadsheet
-
-
-// Make sure it is public or set to Anyone with link can view
-
 (function() {
-  console.log("function sent");
-  var spreadsheetID = "140f-u3YxCg3xlspx-xNWPbkXVPSHOOMopCWtsV-Wdao"
-  var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json";
-  console.log(url)
-  $.getJSON(url,
-    function (data) {
-      // clean object received
-      for (var i = 0; i < data.feed.entry.length; i++) {
-          for (var key in data.feed.entry[i]) {
-              if (data.feed.entry[i].hasOwnProperty(key) && key.substr(0,4) === 'gsx$') {
-                  // copy the value in the key up a level and delete the original key
-                  data.feed.entry[i][key.substr(4)] = data.feed.entry[i][key].$t;
-                  delete data.feed.entry[i][key];
-              }
-              else
-              {
-                delete data.feed.entry[i][key];
-              }
-          }
+  var chart = c3.generate({
+      bindto: '#pie',
+      data: {
+        columns: [
+          ['Democratic Practice', 10],
+          ['Peacebuilding', 20],
+          ['Sustainable Development', 30],
+          ['Pivotal Place - New York City', 40],
+          ['Pivotal Place - Souther China', 50],
+          ['Pivotal Place - Western Balkans', 60],
+          ['Special Initiative: Egypt', 29],
+          ['Other', 39],
+        ],
+        type: 'pie'
+      },
+      color: {
+        pattern: ['#449AA2', '#364D6E', '#703F7D', '#ED871F', '#B5004A', '#744584', '#cfddb8', '#97AFD2']
+      },
+      legend: {
+          position: 'right'
       }
-
-      //C3 Formatting
-      var datap = data.feed.entry;
-      var datacategories = Object.keys(datap[0]);
-      var emptyarray = [];
-      var dataarray = [];
-      var labelobject = {};
-
-      for (var i = 0; i < datacategories.length; i++)
-      {
-        emptyarray.push(datacategories[i]);
-        for (var j = 0; j < datap.length; j++)
-        {
-          if (datap[j].hasOwnProperty(datacategories[i]))
-          {
-            emptyarray.push(datap[j][datacategories[i]]);
+  });
+  var chart = c3.generate({
+      bindto: '#line',
+      data: {
+        x: 'x',
+        columns: [
+          ['x', '2013-01-01', '2013-04-01', '2013-07-01', '2013-10-01', '2014-01-01', '2014-04-01', '2014-07-01', '2014-10-01', '2015-01-01', '2015-04-01', '2015-07-01', '2015-10-01'],
+          ['New York', 1000232, 1050232, 1100232, 2000232, 800232, 1050532, 1432232, 1300232, 20232, 1085232, 1232, 105432],
+          ['Boston', 1800232, 1200232, 1700232, 1104532, 980232, 1050232, 1102232, 1300232, 25002, 106542, 100532, 1050232],
+          ['Philadelphia', 1330232, 1870232, 2500232, 65232, 1000252, 1050232, 113232, 130032, 2566232, 1065232, 1005432, 10472]
+        ]
+      },
+      regions: [
+        {start:'2013-01-01', end:'2013-10-01', class:'r2013'},
+        {start:'2014-01-01', end:'2014-10-01', class:'r2014'},
+        {start:'2015-01-01', end:'2015-10-01', class:'r2015'}
+      ],
+      axis: {
+        x: {
+          type: 'timeseries',
+          label: {
+            text: 'Investment Year',
+            position: 'outer-center'
+          },
+          tick: {
+            values: ['2013-05-01', '2014-05-01', '2015-05-01'],
+            format: '%Y'
+          }
+        },
+        y: {
+          label: {
+            text: 'Infrastructure Investment',
+            position: 'outer-middle'
           }
         }
-        dataarray.push(emptyarray);
-        labelobject[emptyarray[0]] = emptyarray[emptyarray.length - 1];
-        emptyarray = [];
+      },
+      color: {
+        pattern: ['#449AA2', '#364D6E', '#703F7D', '#ED871F', '#B5004A', '#744584', '#cfddb8', '#97AFD2']
+      },
+      legend: {
+          position: 'bottom'
       }
-
-      //Chart Building
-      var chart = c3.generate({
-          bindto: '#chart',
-          data: {
-            x: 'x',
-            columns: dataarray,
-            names: labelobject,
-            type: 'bar'
-          },
-          axis: {
-            x: {
-              type: 'timeseries',
-              label: {
-                text: 'Investment Year',
-                position: 'outer-center'
-              },
-              tick: {
-                format: '%Y'
-              }
-            },
-            y: {
-              label: {
-                text: 'Infrastructure Investment',
-                position: 'outer-middle'
-              }
-            }
-          },
-          color: {
-            pattern: ['#449AA2', '#364D6E', '#703F7D', '#ED871F', '#B5004A', '#744584', '#cfddb8', '#97AFD2']
-          },
-          legend: {
-              position: 'bottom'
+  });
+  var chart = c3.generate({
+      bindto: '#bar',
+      data: {
+        x: 'x',
+        columns: [
+          ['x', 'Bicyclists', 'Pedestrians', 'Cars', 'Boats'],
+          ['New York', 1000, 1032, 4232, 132],
+          ['Boston', 182, 1262, 1782, 1562],
+          ['Philadelphia', 1232, 785, 4560, 1092]
+        ],
+        type: 'bar'
+      },
+      axis: {
+        x: {
+          type: 'category',
+          label: {
+            text: 'Vehicle Type',
+            position: 'outer-center'
           }
-      });
-    });
+        },
+        y: {
+          label: {
+            text: 'Vehicle Count',
+            position: 'outer-middle'
+          }
+        },
+      },
+      color: {
+        pattern: ['#449AA2', '#364D6E', '#703F7D', '#ED871F', '#B5004A', '#744584', '#cfddb8', '#97AFD2']
+      },
+      legend: {
+          position: 'right'
+      }
+  });
+  var chart = c3.generate({
+      bindto: '#stackedbar',
+      data: {
+        x: 'x',
+        columns: [
+          ['x', 'Bicyclists', 'Pedestrians', 'Cars', 'Boats'],
+          ['New York', 1000, 1032, 4232, 132],
+          ['Boston', 182, 1262, 1782, 1562],
+          ['Philadelphia', 1232, 785, 4560, 1092]
+        ],
+        type: 'bar',
+        groups: [
+          ['New York', 'Boston', 'Philadelphia']
+        ]
+      },
+      grid: {
+        y: {
+          lines: [{value:0}]
+        }
+      },
+      axis: {
+        x: {
+          type: 'category',
+          label: {
+            text: 'Vehicle Type',
+            position: 'outer-center'
+          }
+        },
+        y: {
+          label: {
+            text: 'Vehicle Count',
+            position: 'outer-middle'
+          }
+        },
+      },
+      color: {
+        pattern: ['#449AA2', '#364D6E', '#703F7D', '#ED871F', '#B5004A', '#744584', '#cfddb8', '#97AFD2']
+      },
+      legend: {
+          position: 'left'
+      }
+  });
 })();
