@@ -29,9 +29,9 @@ console.log("loaded main.js");
         x: 'x',
         columns: [
           ['x', '2013-01-01', '2013-04-01', '2013-07-01', '2013-10-01', '2014-01-01', '2014-04-01', '2014-07-01', '2014-10-01', '2015-01-01', '2015-04-01', '2015-07-01', '2015-10-01'],
-          ['New York', 1000232, 1050232, 1100232, 2000232, 800232, 1050532, 1432232, 1300232, 20232, 1085232, 1232, 105432],
-          ['Boston', 1800232, 1200232, 1700232, 1104532, 980232, 1050232, 1102232, 1300232, 25002, 106542, 100532, 1050232],
-          ['Philadelphia', 1330232, 1870232, 2500232, 65232, 1000252, 1050232, 113232, 130032, 2566232, 1065232, 1005432, 10472]
+          ['New York but longer name New York but longer name ', 1000232, 1050232, 1100232, 2000232, 800232, 1050532, 1432232, 1300232, 20232, 1085232, 1232, 105432],
+          ['Boston New York but longer name  New York but longer name ', 1800232, 1200232, 1700232, 1104532, 980232, 1050232, 1102232, 1300232, 25002, 106542, 100532, 1050232],
+          ['Philadelphia New York but longer name New York but longer name ', 1330232, 1870232, 2500232, 65232, 1000252, 1050232, 113232, 130032, 2566232, 1065232, 1005432, 10472]
         ]
       },
       regions: [
@@ -70,7 +70,7 @@ console.log("loaded main.js");
       data: {
         x: 'x',
         columns: [
-          ['x', 'Bicyclists', 'Pedestrians', 'Cars', 'Boats'],
+          ['x', 'Bicyclists New York but longer name ', 'PedestriaNew York but longer name ns', 'CaNew York but longer name rs', 'BoaNew York but longer name New York but longer name ts'],
           ['New York', 1000, 1032, 4232, 132],
           ['Boston', 182, 1262, 1782, 1562],
           ['Philadelphia', 1232, 785, 4560, 1092]
