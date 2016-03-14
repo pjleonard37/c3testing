@@ -1,46 +1,86 @@
 console.log("loaded main.js");
 
-// Revealing Module Pattern
-// Example from https://carldanley.com/js-revealing-module-pattern/
+// ID of the Google Spreadsheet
 
-/*
-var MyModule = (function(window, undefined){
-	
-	function myMethod(){
-		alert('my Method');
-	}
 
-	function myOtherMethod(){
-		alert('my other Method');
-	}
+// Make sure it is public or set to Anyone with link can view
 
-	//return public methods explicitly
-	return{
-		someMethod: myMethod,
-		someOtherMethod: myOtherMethod
-	};
-})(window);
-*/
+(function() {
+  console.log("function sent");
+  var spreadsheetID = "140f-u3YxCg3xlspx-xNWPbkXVPSHOOMopCWtsV-Wdao"
+  var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json";
+  console.log(url)
+  $.getJSON(url,
+    function (data) {
+      for (var i = 0; i < data.feed.entry.length; i++) {
+          for (var key in data.feed.entry[i]) {
+              if (data.feed.entry[i].hasOwnProperty(key) && key.substr(0,4) === 'gsx$') {
+                  // copy the value in the key up a level and delete the original key
+                  data.feed.entry[i][key.substr(4)] = data.feed.entry[i][key].$t;
+                  delete data.feed.entry[i][key];
+              }
+              else
+              {
+                delete data.feed.entry[i][key];
+              }
+          }
+      }
 
-//MyModule.myMethod();
-//MyModule.myOtherMethod();
-//MyModule.someMethod();
-//MyModule.someOtherMethod();
+      //C3 Formatting
+      var datap = data.feed.entry;
+      var datacategories = Object.keys(datap[0]);
+      var emptyarray = [];
+      var dataarray = [];
+      var labelobject = {};
 
-// Modular JS with Object Literal Pattern
-// From: https://www.youtube.com/watch?v=HkFlM73G-hk&list=PLoYCgNOIyGABs-wDaaxChu82q_xQgUb4f
+      for (var i = 0; i < datacategories.length; i++)
+      {
+        emptyarray.push(datacategories[i]);
+        for (var j = 0; j < datap.length; j++)
+        {
+          if (datap[j].hasOwnProperty(datacategories[i]))
+          {
+            emptyarray.push(datap[j][datacategories[i]]);
+          }
+        }
+        dataarray.push(emptyarray);
+        labelobject[emptyarray[0]] = emptyarray[emptyarray.length - 1];
+        emptyarray = [];
+      }
 
-// object Literal
-var MyModule = {
-	name: 'PJ',
-	year: 2014,
-	sayName: function(){
-		console.log(this.name);
-	},
-	setName: function(newName){
-		this.name = newName;
-	}
-};
-
-myModule.setName('Raphael');
-myModule.sayName();
+      //Chart Building
+      var chart = c3.generate({
+          bindto: '#chart',
+          data: {
+            x: 'x',
+            columns: dataarray,
+            names: labelobject,
+            type: 'bar'
+          },
+          axis: {
+            x: {
+              type: 'timeseries',
+              label: {
+                text: 'Investment Year',
+                position: 'outer-center'
+              },
+              tick: {
+                format: '%Y'
+              }
+            },
+            y: {
+              label: {
+                text: 'Infrastructure Investment',
+                position: 'outer-middle'
+              }
+            }
+          },
+          color: {
+            pattern: ['#449AA2', '#364D6E', '#703F7D', '#ED871F', '#B5004A', '#744584', '#cfddb8', '#97AFD2']
+          },
+          legend: {
+              position: 'bottom'
+          }
+      });
+    });
+})();
