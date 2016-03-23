@@ -110,7 +110,7 @@ console.log("loaded main.js");
                   position: 'outer-middle'
                 },
                 tick: {
-                    format: d3.format("$")
+                    format: d3.format("$,.2r")
                 }
               },
               rotated: rotated
