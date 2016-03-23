@@ -2,7 +2,7 @@ console.log("loaded main.js");
 
 (function() {
   console.log("function");
-  var myChartType = "piechart";
+  var myChartType = "linechart";
   var myChartID = "13SN1M6K1lbkmME6b5x1rigC2ps52w3NNqjMX7cnGTGU";
   var myChartGid = 300047528;
   var myxTitle = "xtitle";
