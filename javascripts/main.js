@@ -38,7 +38,6 @@ console.log("loaded main.js");
       }
       //C3 Formatting
       var datap = data.feed.entry;
-      console.log(datap);
       var datacategories = Object.keys(datap[0]);
       var emptyarray = [];
       var dataarray = [];
@@ -109,6 +108,9 @@ console.log("loaded main.js");
                 label: {
                   text: myyTitle,
                   position: 'outer-middle'
+                },
+                tick: {
+                    format: d3.format("$")
                 }
               },
               rotated: rotated
