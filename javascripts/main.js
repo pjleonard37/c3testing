@@ -17,8 +17,8 @@ console.log("loaded main.js");
   for (var i = 1; i < 9; i++) {
     colorvalue.push($(this).data('col' + i));
   }
-  var myURL = "https://docs.google.com/spreadsheets/d/" + myChartID + "/gviz/tq?gid=" + myChartGid;
-
+  var myURL = "https://spreadsheets.google.com/feeds/list/" + myChartID + "/4/public/values?alt=json";
+  //https://spreadsheets.google.com/feeds/list/13SN1M6K1lbkmME6b5x1rigC2ps52w3NNqjMX7cnGTGU/4/public/values?alt=json
 //  var myURL = "https://spreadsheets.google.com/feeds/list/" + myChartID + "/od6/public/values?gid=" + myChartGid + "&alt=json";
   console.log(myURL);
   $.getJSON(myURL, function (data) {
