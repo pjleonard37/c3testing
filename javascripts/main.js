@@ -109,9 +109,9 @@ console.log("loaded main.js");
                   text: myyTitle,
                   position: 'outer-middle'
                 },
-                // tick: {
-                //     format: d3.format("$,.2r")
-                // }
+                tick: {
+                    format: d3.format("$,.2r")
+                }
               },
               rotated: rotated
             },
