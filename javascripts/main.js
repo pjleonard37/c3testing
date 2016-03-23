@@ -17,7 +17,10 @@ console.log("loaded main.js");
   for (var i = 1; i < 9; i++) {
     colorvalue.push($(this).data('col' + i));
   }
-  var myURL = "https://spreadsheets.google.com/feeds/list/" + myChartID + "/od6/public/values?gid=" + myChartGid + "&alt=json";
+  var myURL = "https://docs.google.com/spreadsheets/d/" + myChartID + "/gviz/tq?gid=" + myChartGid;
+
+//  var myURL = "https://spreadsheets.google.com/feeds/list/" + myChartID + "/od6/public/values?gid=" + myChartGid + "&alt=json";
+  console.log(myURL);
   $.getJSON(myURL, function (data) {
     for (var i = 0; i < data.feed.entry.length; i++) {
       for (var i = 0; i < data.feed.entry.length; i++) {
